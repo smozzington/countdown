@@ -14,27 +14,9 @@ function genSmlNumber(){
     var x = smlNumber[Math.floor(Math.random()*smlNumber.length)];
         var cardSlot = 1;
         document.getElementById("box"+cardSlot).innerHTML = x;
-        for(i=1; i<=6; i++){
-            if(cardSlot == x){
-            document.getElementById("box"+i).innerHTML = x;
-        }
-    }
 }
 
         
         
         
-        
-        
-//        var cardSlot = 1;
-//        document.getElementById("box"+cardSlot).innerHTML = x;
-//        var slotFull = [x];
-//        if(){
-//    
-//        }
-//    }
-//}
-
-
-
-//document.getElementById("box"+i).innerHTML = x;
+      
