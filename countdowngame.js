@@ -38,7 +38,7 @@ function gameReady() {
   const length = cardSlotsNodes.length - 1;
   // this is just because nodelist (unlike an array) counts from 1
 
-  if (cardSlots[5].innerHTML) {
+  if (cardSlotsNodes[length].innerHTML) {
     ready = true;
   }
 }
@@ -91,7 +91,6 @@ function genTarget(){
 
 //Generate random small number from array
 function genSmallNumber(){
-    console.log('joe')
     var smallNumber = smallArray[0];
     smallArray.splice(0, 1);
     var answersS = [];
@@ -104,12 +103,17 @@ function genSmallNumber(){
 
 //Generate random large number from array
 function genLargeNumber(){
+    if (largeArray.length < 1) {
+      return;
+    }
+
+    console.log('executing code');
     var largeNumber = largeArray[0];
     largeArray.splice(0, 1);
-    var answersL = [];
-    if(largeArray.length == 0){
-        largeArray.push(answersL);        
-    }
+    // var answersL = [];
+    // if(largeArray.length == 0){
+    //     largeArray.push(answersL);
+    // }
     cardSlot += 1;
     document.getElementById("box"+cardSlot).innerHTML = largeNumber;
 }
