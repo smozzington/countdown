@@ -208,3 +208,7 @@ html{
     top: 15px;
     left: 175px;
 }
+
+.ready {
+  color: 'red'
+}

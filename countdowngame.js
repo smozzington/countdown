@@ -3,13 +3,20 @@ var action;
 var cardSlot = 0;
 var timeRemaining;
 var largeArray = [25, 50, 75, 100];
+var ready = false;
 shuffleLarge();
 
 var smallArray = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10];
 shuffleSmall();
 
 //Start countdown
+document.getElementById('start_button').disabled = true;
+
 document.getElementById("start_button").onclick = function(){
+  if (ready === false) {
+    alert('Please use more numbers');
+    return;
+  }
     if(playing == true){
         location.reload();
     }else{        
@@ -26,14 +33,26 @@ document.getElementById("start_button").onclick = function(){
     }
 }
 
+function gameReady() {
+  const cardSlotsNodes = document.querySelectorAll('.box');
+  const length = cardSlotsNodes.length - 1;
+  // this is just because nodelist (unlike an array) counts from 1
+
+  if (cardSlots[5].innerHTML) {
+    ready = true;
+  }
+}
+
 //Click on small number button to generate a random small number
 document.getElementById("small_number_card").onclick = function(){
     genSmallNumber();
+    gameReady();
 }
 
 //Click on large number button to generate a random large number
 document.getElementById("large_number_card").onclick = function(){
     genLargeNumber();
+    gameReady()
 }
 
 
