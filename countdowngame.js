@@ -91,6 +91,7 @@ function genTarget(){
 
 //Generate random small number from array
 function genSmallNumber(){
+    console.log('joe')
     var smallNumber = smallArray[0];
     smallArray.splice(0, 1);
     var answersS = [];
